@@ -11,6 +11,7 @@ bot.on("polling_error", (msg) => console.log(msg));
 bot.on('message', ({ chat, text }) => {
     try {
         const chatId = chat.id;
+        if(!text) return;
         const words = text.split(' ')
         for (let index = 0; index < words.length; index++) {
             const element = words[index];
